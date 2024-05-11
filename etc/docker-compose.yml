@@ -1,0 +1,62 @@
+version: "3.7"
+
+services:
+  app:
+    image: node:lts
+    command: sh -c "yarn install && yarn start"
+    ports:
+      - 3000:3000
+    working_dir: /code
+    volumes:
+      - /home/vagrant/dev-su-web/app:/code
+      # - /code/node_modules
+    depends_on:
+      - api
+  api:
+    image: maven:3.8-eclipse-temurin-11
+    command: "mvn jetty:run"
+    restart: always
+    ports:
+      - 8080:8080
+    working_dir: /code
+    volumes:
+      - /home/vagrant/dev-su-web/api:/code
+      - /root/.m2/repository
+    environment:
+      MARIADB_HOST: db
+    secrets:
+      - db-password
+    depends_on:
+      - db
+  db:
+    image: mariadb:10.6
+    restart: always
+    ports:
+      - 3306:3306
+    volumes:
+      - db-data:/var/lib/mysql
+    environment:
+      - MARIADB_ROOT_PASSWORD_FILE=/run/secrets/db-password
+      - MARIADB_DATABASE=dev-su
+      - MARIADB_USER=maria
+      - MARIADB_PASSWORD_FILE=/run/secrets/db-password
+    secrets:
+      - db-password
+  phpmyadmin:
+    image: phpmyadmin:apache
+    restart: always
+    ports:
+      - 9000:80
+    environment:
+      - PMA_HOST=db
+      - PMA_USER=maria
+      - PMA_PASSWORD_FILE=/run/secrets/db-password
+    secrets:
+      - db-password
+    depends_on:
+      - db
+volumes:
+  db-data: {}
+secrets:
+  db-password:
+    file: db/password.txt

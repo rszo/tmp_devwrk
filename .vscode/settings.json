@@ -1,4 +1,7 @@
 {
   "files.eol": "\n",
-  "typescript.validate.enable": false
+  "java.autobuild.enabled": false,
+  "java.import.maven.enabled": false,
+  "java.import.gradle.enabled": false,
+  "dart.runPubGetOnPubspecChanges": false
 }

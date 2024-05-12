@@ -1,0 +1,4 @@
+{
+  "editor.inlayHints.enabled": "off",
+  "java.import.maven.enabled": true
+}

@@ -1,0 +1,60 @@
+version: "3.7"
+
+services:
+  # app:
+  #   image: node:lts
+  #   command: sh -c "yarn install && yarn start"
+  #   ports:
+  #     - 3000:3000
+  #   working_dir: /code
+  #   volumes:
+  #     - /home/vagrant/dev-prototype/app:/code
+  #     # - /code/node_modules
+  #   depends_on:
+  #     - api
+  api:
+    image: jetty:11.0-jdk17
+    restart: always
+    ports:
+      - 8080:8080
+    volumes:
+      - /home/vagrant/dev-prototype/api/start.d/servlets.ini:/var/lib/jetty/start.d/servlets.ini
+      - /home/vagrant/dev-prototype/api/target/api.war:/var/lib/jetty/webapps/webapi.war
+    environment:
+      MARIADB_HOST: db
+    secrets:
+      - db-password
+    depends_on:
+      - db
+  db:
+    image: mariadb:10.6
+    restart: always
+    ports:
+      - 3306:3306
+    volumes:
+      - db-data:/var/lib/mysql
+    environment:
+      - MARIADB_ROOT_PASSWORD_FILE=/run/secrets/db-password
+      - MARIADB_DATABASE=dev-prototype
+      - MARIADB_USER=maria
+      - MARIADB_PASSWORD_FILE=/run/secrets/db-password
+    secrets:
+      - db-password
+  phpmyadmin:
+    image: phpmyadmin:apache
+    restart: always
+    ports:
+      - 9000:80
+    environment:
+      - PMA_HOST=db
+      - PMA_USER=maria
+      - PMA_PASSWORD_FILE=/run/secrets/db-password
+    secrets:
+      - db-password
+    depends_on:
+      - db
+volumes:
+  db-data: {}
+secrets:
+  db-password:
+    file: db/password.txt

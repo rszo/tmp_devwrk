@@ -1,0 +1,9 @@
+{
+  "appTitle": "app",
+  "@appTitle": {
+    "description": "REMS"
+  },
+  "craneFormTravelers": "訪問者数",
+  "craneFormDates": "日付を選択",
+  "craneFormLocation": "場所を選択"
+}

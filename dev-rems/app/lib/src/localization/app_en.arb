@@ -2,5 +2,17 @@
   "appTitle": "app",
   "@appTitle": {
     "description": "The title of the application"
+  },
+  "craneFormTravelers": "Travelers",
+  "@craneFormTravelers": {
+    "description": "Form field label to select the number of travellers."
+  },
+  "craneFormDates": "Select Dates",
+  "@craneFormDates": {
+    "description": "Form field label to select multiple dates."
+  },
+  "craneFormLocation": "Select Location",
+  "@craneFormLocation": {
+    "description": "Form field label to select a location."
   }
 }

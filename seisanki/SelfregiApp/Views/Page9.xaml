@@ -1,0 +1,40 @@
+﻿<Page
+    x:Class="SelfregiApp.Views.Page9"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:SelfregiApp.Views"
+    mc:Ignorable="d" 
+    d:DesignHeight="450" d:DesignWidth="800"
+    Title="Page9">
+
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition/>
+      <ColumnDefinition Width="Auto"/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition/>
+      <RowDefinition Height="60"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    <TextBlock Grid.ColumnSpan="2" Text="精算完了" Style="{DynamicResource font36brown}"/>
+    <Line Grid.ColumnSpan="2" Grid.Row="1" Margin="10" X2="{Binding ActualWidth, RelativeSource={RelativeSource Self}}" Stroke="Black"/>
+    <TextBlock Grid.ColumnSpan="2" Grid.Row="2" Text="領収書をお受け取りください。" Style="{DynamicResource font18brown}"/>
+    <Image Grid.Column="1" Grid.RowSpan="3" Grid.Row="3" Source="/Resources/screen04.png" Width="540" Height="450"/>
+    <TextBlock Grid.Row="4" Style="{DynamicResource font18brown}">
+      <Run Text="出場用バーコードを印刷します。"/>
+      <LineBreak/>
+      <Run Text="しばらくお待ちください。"/>
+    </TextBlock>
+    <Button Grid.Column="1" Grid.Row="7" HorizontalAlignment="Right">
+      <Image Source="/Resources/btn_end.png" Width="196" Height="107"/>
+    </Button>
+  </Grid>
+</Page>

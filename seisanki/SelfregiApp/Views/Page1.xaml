@@ -1,0 +1,64 @@
+﻿<Page
+    x:Class="SelfregiApp.Views.Page1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:SelfregiApp.Views"
+    mc:Ignorable="d" 
+    d:DesignHeight="450" d:DesignWidth="800"
+    Title="Page1">
+
+  <Page.Resources>
+    <Style x:Key="font24brown" TargetType="TextBlock">
+      <Setter Property="Foreground" Value="#FF533745"/>
+      <Setter Property="FontFamily" Value="MS UI Gothic"/>
+      <Setter Property="FontSize" Value="32"/>
+    </Style>
+  </Page.Resources>
+
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition/>
+      <ColumnDefinition Width="Auto"/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    <TextBlock Text="セルフレジ" Style="{DynamicResource font36brown}"/>
+    <Button Grid.Column="1">
+      <Image Source="/Resources/btn_end.png" Stretch="None" Width="92" Height="50"/>
+    </Button>
+    <Line Grid.ColumnSpan="2" Grid.Row="1" Margin="10" X2="{Binding ActualWidth, RelativeSource={RelativeSource Self}}" Stroke="Black"/>
+    <TextBlock Grid.ColumnSpan="2" Grid.Row="2" Text="【入場レシート】または【会員証】のバーコードを読ませてください。" Height="80" Style="{DynamicResource font18brown}"/>
+    <Image Grid.ColumnSpan="2" Grid.Row="3" Source="/Resources/screen01.png" Width="640" Height="480"/>
+    <Grid Grid.ColumnSpan="2" Grid.Row="4">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="30"/>
+        <ColumnDefinition Width="30"/>
+        <ColumnDefinition Width="30"/>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition/>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="30"/>
+        <ColumnDefinition Width="60"/>
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <ContentControl Grid.Column="3" Grid.RowSpan="2" Width="181" Height="98"/>
+      <Button Grid.Column="5" Grid.RowSpan="2">
+        <Image Source="/Resources/btn_iczan.png" Stretch="None" Width="181" Height="98"/>
+      </Button>
+      <TextBlock Grid.Row="1" Text="・" HorizontalAlignment="Center" Style="{DynamicResource font24brown}"/>
+      <TextBlock Grid.Column="1" Grid.Row="1" Text="P" HorizontalAlignment="Center" Style="{DynamicResource font24brown}"/>
+      <TextBlock Grid.Column="2" Grid.Row="1" Text="C" HorizontalAlignment="Center" Style="{DynamicResource font24brown}"/>
+      <TextBlock Grid.Column="6" Grid.Row="1" Text="・" HorizontalAlignment="Center" Style="{DynamicResource font24brown}"/>
+    </Grid>
+  </Grid>
+</Page>

@@ -1,0 +1,40 @@
+﻿<Page
+    x:Class="MaintApp.Views.Page2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:MaintApp.Views"
+    mc:Ignorable="d" 
+    d:DesignHeight="450" d:DesignWidth="800"
+    Title="Page2">
+
+  <Page.Resources>
+    <Style TargetType="Button">
+      <Setter Property="Margin" Value="5"/>
+      <Setter Property="Width" Value="165"/>
+      <Setter Property="FontSize" Value="24"/>
+    </Style>
+  </Page.Resources>
+
+  <StackPanel Margin="10,0">
+    <WrapPanel>
+      <Button Content="精査"/>
+      <Button Content="Ver."/>
+    </WrapPanel>
+    <Separator Height="10"/>
+    <WrapPanel>
+      <Button Content="紙幣回収"/>
+      <Button Content="硬貨回収"/>
+      <Button Content="リセット"/>
+    </WrapPanel>
+    <Separator Height="10"/>
+    <WrapPanel>
+      <Button Content="ＩＣ残高照会"/>
+      <Button Content="ＩＣ履歴照会"/>
+      <Button Content="レシート再印刷"/>
+      <Button Content="クレジット取消"/>
+    </WrapPanel>
+
+  </StackPanel>
+</Page>

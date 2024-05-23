@@ -1,0 +1,65 @@
+﻿<Window
+    x:Class="MaintApp.Views.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MaintApp.Views"
+    mc:Ignorable="d"
+    Title="MainWindow" Height="450" Width="800">
+
+  <Window.Resources>
+    <Style x:Key="font24" TargetType="Button">
+      <Setter Property="FontFamily" Value="MS UI Gothic"/>
+      <Setter Property="FontSize" Value="32"/>
+    </Style>
+  </Window.Resources>
+
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition/>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="Auto"/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition/>
+    </Grid.RowDefinitions>
+    <GroupBox Grid.Column="1" Header="精算点検">
+      <GroupBox.Resources>
+        <Style TargetType="Button" BasedOn="{StaticResource font24}">
+          <Setter Property="Padding" Value="20,13"/>
+        </Style>
+      </GroupBox.Resources>
+      <StackPanel Orientation="Horizontal">
+        <Button Content="点検"/>
+        <Separator Width="45" Visibility="Hidden"/>
+        <Button Content="精算"/>
+      </StackPanel>
+    </GroupBox>
+    <GroupBox Grid.Column="2" Header="釣銭機管理">
+      <GroupBox.Resources>
+        <Style TargetType="Button" BasedOn="{StaticResource font24}">
+          <Setter Property="Padding" Value="20,13"/>
+        </Style>
+        <Style TargetType="Separator">
+          <Setter Property="Width" Value="5"/>
+          <Setter Property="Visibility" Value="Hidden"/>
+        </Style>
+      </GroupBox.Resources>
+      <StackPanel Orientation="Horizontal">
+        <Button Content="入金"/>
+        <Separator/>
+        <Button Content="両替"/>
+        <Separator/>
+        <Button Content="出金"/>
+        <Separator/>
+        <Button Content="戻る"/>
+        <Separator/>
+        <Button Content="終了"/>
+      </StackPanel>
+    </GroupBox>
+    <Frame Content="Frame" Grid.ColumnSpan="3" Grid.Row="1"/>
+
+  </Grid>
+</Window>

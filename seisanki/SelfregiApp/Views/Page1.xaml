@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
     xmlns:local="clr-namespace:SelfregiApp.Views"
     mc:Ignorable="d" 
-    d:DesignHeight="450" d:DesignWidth="800"
+    d:DesignHeight="768" d:DesignWidth="1024"
     Title="Page1">
 
   <Page.Resources>
@@ -30,13 +30,18 @@
       <RowDefinition Height="Auto"/>
     </Grid.RowDefinitions>
     <TextBlock Text="セルフレジ" Style="{DynamicResource font36brown}"/>
-    <Button Grid.Column="1">
-      <Image Source="/Resources/btn_end.png" Stretch="None" Width="92" Height="50"/>
+    <Button Grid.Column="1" Click="Button_Click">
+      <Image Source="{DynamicResource img_end}" Width="92" Height="50"/>
     </Button>
     <Line Grid.ColumnSpan="2" Grid.Row="1" Margin="10" X2="{Binding ActualWidth, RelativeSource={RelativeSource Self}}" Stroke="Black"/>
     <TextBlock Grid.ColumnSpan="2" Grid.Row="2" Text="【入場レシート】または【会員証】のバーコードを読ませてください。" Height="80" Style="{DynamicResource font18brown}"/>
     <Image Grid.ColumnSpan="2" Grid.Row="3" Source="/Resources/screen01.png" Width="640" Height="480"/>
     <Grid Grid.ColumnSpan="2" Grid.Row="4">
+      <Grid.Resources>
+        <Style TargetType="TextBlock" BasedOn="{StaticResource font24brown}">
+          <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+      </Grid.Resources>
       <Grid.ColumnDefinitions>
         <ColumnDefinition Width="30"/>
         <ColumnDefinition Width="30"/>
@@ -52,13 +57,13 @@
         <RowDefinition Height="Auto"/>
       </Grid.RowDefinitions>
       <ContentControl Grid.Column="3" Grid.RowSpan="2" Width="181" Height="98"/>
-      <Button Grid.Column="5" Grid.RowSpan="2">
-        <Image Source="/Resources/btn_iczan.png" Stretch="None" Width="181" Height="98"/>
+      <Button Grid.Column="5" Grid.RowSpan="2" Click="Button_Click_1">
+        <Image Source="{DynamicResource img_icinq}" Width="181" Height="98"/>
       </Button>
-      <TextBlock Grid.Row="1" Text="・" HorizontalAlignment="Center" Style="{DynamicResource font24brown}"/>
-      <TextBlock Grid.Column="1" Grid.Row="1" Text="P" HorizontalAlignment="Center" Style="{DynamicResource font24brown}"/>
-      <TextBlock Grid.Column="2" Grid.Row="1" Text="C" HorizontalAlignment="Center" Style="{DynamicResource font24brown}"/>
-      <TextBlock Grid.Column="6" Grid.Row="1" Text="・" HorizontalAlignment="Center" Style="{DynamicResource font24brown}"/>
+      <TextBlock Grid.Row="1" Text="・" Visibility="Hidden"/>
+      <TextBlock Grid.Column="1" Grid.Row="1" Text="P" Visibility="Hidden"/>
+      <TextBlock Grid.Column="2" Grid.Row="1" Text="C" Visibility="Hidden"/>
+      <TextBlock Grid.Column="6" Grid.Row="1" Text="・" Visibility="Hidden"/>
     </Grid>
   </Grid>
 </Page>

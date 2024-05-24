@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
     xmlns:local="clr-namespace:SelfregiApp.Views"
     mc:Ignorable="d" 
-    d:DesignHeight="450" d:DesignWidth="800"
+    d:DesignHeight="768" d:DesignWidth="1024"
     Title="Page8">
 
   <Page.Resources>
@@ -36,8 +36,8 @@
       <RowDefinition Height="Auto"/>
     </Grid.RowDefinitions>
     <TextBlock Grid.ColumnSpan="2" Text="QR決済支払" Style="{DynamicResource font36brown}"/>
-    <Button Grid.Column="2">
-      <Image Source="/Resources/btn_cancel.png" Width="92" Height="50"/>
+    <Button Grid.Column="2" Click="Button_Click">
+      <Image Source="{DynamicResource img_cancel}" Width="92" Height="50"/>
     </Button>
     <Line Grid.ColumnSpan="3" Grid.Row="1" Margin="10" X2="{Binding ActualWidth, RelativeSource={RelativeSource Self}}" Stroke="Black"/>
     <TextBlock Grid.ColumnSpan="3" Grid.Row="2" Text="お使いのスマートフォン等で支払用QRコードを表示し、読み込ませてください。" Style="{DynamicResource font18brown}"/>
@@ -57,12 +57,12 @@
       </Grid.RowDefinitions>
       <TextBlock Grid.ColumnSpan="3" Grid.Row="1" Text="決済金額" Style="{DynamicResource font24brown}"/>
       <TextBlock Grid.Row="2" Text="\" Style="{DynamicResource font48black}"/>
-      <TextBlock Grid.Column="1" Grid.Row="2" Text="TextBlock" HorizontalAlignment="Right" Style="{DynamicResource font48black}"/>
+      <TextBlock Grid.Column="1" Grid.Row="2" Text="300" HorizontalAlignment="Right" Style="{DynamicResource font48black}"/>
       <Image Grid.ColumnSpan="2" Grid.Row="4" Source="/Resources/screen03small.png" Width="300" Height="300"/>
       <Image Grid.Column="3" Grid.RowSpan="5" Source="/Resources/screen01.png" Width="300" Height="400"/>
     </Grid>
-    <Button Grid.Row="4">
-      <Image Source="/Resources/btn_back.png" Width="196" Height="107"/>
+    <Button Grid.Row="4" Click="Button_Click_1">
+      <Image Source="{DynamicResource img_back}" Width="196" Height="107"/>
     </Button>
   </Grid>
 </Page>

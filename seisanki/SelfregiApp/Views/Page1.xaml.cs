@@ -15,14 +15,30 @@ using System.Windows.Shapes;
 
 namespace SelfregiApp.Views
 {
-    /// <summary>
-    /// Page1.xaml の相互作用ロジック
-    /// </summary>
-    public partial class Page1 : Page
+  /// <summary>
+  /// Page1.xaml の相互作用ロジック
+  /// </summary>
+  public partial class Page1 : Page
+  {
+    public Page1()
     {
-        public Page1()
-        {
-            InitializeComponent();
-        }
+      InitializeComponent();
     }
+
+    private void Button_Click(object sender, RoutedEventArgs e)
+    {
+      SystemCommands.CloseWindow(Window.GetWindow(this));
+    }
+
+    private void Button_Click_1(object sender, RoutedEventArgs e)
+    {
+      // Create a pack URI
+      Uri uri = new("/Views/Page2.xaml", UriKind.Relative);
+
+      // Get the navigation service that was used to
+      // navigate to this page, and navigate to
+      // AnotherPage.xaml
+      NavigationService.Navigate(uri);
+    }
+  }
 }

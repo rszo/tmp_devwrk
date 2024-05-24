@@ -8,6 +8,60 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\btn_back.png" />
+    <None Remove="Resources\btn_cancel.png" />
+    <None Remove="Resources\btn_cash.png" />
+    <None Remove="Resources\btn_confirm.png" />
+    <None Remove="Resources\btn_credit.png" />
+    <None Remove="Resources\btn_end.png" />
+    <None Remove="Resources\btn_ic.png" />
+    <None Remove="Resources\btn_iczan.png" />
+    <None Remove="Resources\btn_QR.png" />
+    <None Remove="Resources\screen01.png" />
+    <None Remove="Resources\screen03small.png" />
+    <None Remove="Resources\screen04.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\btn_back.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\btn_cancel.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\btn_cash.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\btn_confirm.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\btn_credit.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\btn_end.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\btn_ic.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\btn_iczan.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\btn_QR.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\screen01.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\screen03small.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\screen04.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
   </ItemGroup>
 

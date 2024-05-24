@@ -24,5 +24,11 @@ namespace SelfregiApp.Views
     {
       InitializeComponent();
     }
+
+    private void Button_Click(object sender, RoutedEventArgs e)
+    {
+      NavigationService.Navigate(new Uri("/Views/Page1.xaml", UriKind.Relative));
+      NavigationService.RemoveBackEntry();
+    }
   }
 }

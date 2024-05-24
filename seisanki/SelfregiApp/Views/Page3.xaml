@@ -1,14 +1,152 @@
-﻿<Page x:Class="SelfregiApp.Views.Page3"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:SelfregiApp.Views"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="Page3">
+﻿<Page
+    x:Class="SelfregiApp.Views.Page3"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:SelfregiApp.Views"
+    mc:Ignorable="d" 
+    d:DesignHeight="768" d:DesignWidth="1024"
+    Title="Page3">
 
-    <Grid>
-        
+  <Page.Resources>
+    <Style x:Key="font24brown" TargetType="TextBlock">
+      <Setter Property="Foreground" Value="#FF533745"/>
+      <Setter Property="FontFamily" Value="MS UI Gothic"/>
+      <Setter Property="FontSize" Value="32"/>
+    </Style>
+    <Style x:Key="font30brown" TargetType="TextBlock">
+      <Setter Property="Foreground" Value="#FF533745"/>
+      <Setter Property="FontFamily" Value="MS UI Gothic"/>
+      <Setter Property="FontSize" Value="40"/>
+    </Style>
+    <Style x:Key="font48black" TargetType="TextBlock">
+      <Setter Property="Foreground" Value="Black"/>
+      <Setter Property="FontFamily" Value="MS UI Gothic"/>
+      <Setter Property="FontSize" Value="64"/>
+    </Style>
+    <Style x:Key="font48blue" TargetType="TextBlock">
+      <Setter Property="Foreground" Value="Blue"/>
+      <Setter Property="FontFamily" Value="MS UI Gothic"/>
+      <Setter Property="FontSize" Value="64"/>
+    </Style>
+  </Page.Resources>
+
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition/>
+      <ColumnDefinition Width="Auto"/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    <TextBlock Text="お支払い" Style="{DynamicResource font36brown}"/>
+    <Button Grid.Column="1" Click="Button_Click">
+      <Image Source="/Resources/btn_cancel.png" Width="92" Height="50"/>
+    </Button>
+    <Line Grid.ColumnSpan="2" Grid.Row="1" Margin="10" X2="{Binding ActualWidth, RelativeSource={RelativeSource Self}}" Stroke="Black"/>
+    <TextBlock Grid.ColumnSpan="2" Grid.Row="2" Text="金額明細" Style="{DynamicResource font18brown}"/>
+    <DataGrid Grid.ColumnSpan="2" Grid.Row="3" Margin="20,0" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+    <Grid x:Name="grid1" Grid.ColumnSpan="2" Grid.Row="4" Margin="10" HorizontalAlignment="Center" Height="370">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="50"/>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="50"/>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="50"/>
+        <ColumnDefinition Width="Auto"/>
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <Grid Grid.ColumnSpan="6" Grid.RowSpan="3" Margin="0,0,0,10">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition/>
+          <ColumnDefinition Width="350"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition/>
+          <RowDefinition/>
+          <RowDefinition/>
+          <RowDefinition/>
+          <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.ColumnSpan="3" Text="ご利用料金" Style="{DynamicResource font24brown}"/>
+        <TextBlock Grid.Row="1" Text="\" Style="{DynamicResource font48black}"/>
+        <TextBlock Grid.Column="1" Grid.Row="1" Text="TextBlock" HorizontalAlignment="Right" Style="{DynamicResource font48black}"/>
+        <TextBlock Grid.ColumnSpan="3" Grid.Row="2" Text="お支払残額" Style="{DynamicResource font24brown}"/>
+        <TextBlock Grid.Row="3" Text="\" Style="{DynamicResource font48blue}"/>
+        <TextBlock Grid.Column="1" Grid.Row="3" Text="TextBlock" HorizontalAlignment="Right" Style="{DynamicResource font48blue}"/>
+        <TextBlock Grid.ColumnSpan="3" Grid.Row="4" Text="支払方法を選んでください" Style="{DynamicResource font30brown}"/>
+      </Grid>
+      <Rectangle Grid.Row="2" Height="32"/>
+      <Button Grid.Row="3" Click="Button_Click_1">
+        <Image Source="/Resources/btn_back.png" Width="196" Height="107"/>
+      </Button>
+      <Button Grid.Column="2" Grid.Row="3" Click="Button_Click_2">
+        <Image Source="/Resources/btn_cash.png" Width="196" Height="107"/>
+      </Button>
+      <Button Grid.Column="4" Grid.Row="3" Click="Button_Click_3">
+        <Image Source="/Resources/btn_credit.png" Width="196" Height="107"/>
+      </Button>
+      <Button Grid.Column="6" Grid.Row="3" Click="Button_Click_4">
+        <Image Source="/Resources/btn_ic.png" Width="196" Height="107"/>
+      </Button>
+      <Button Grid.Column="6" Grid.Row="1" Click="Button_Click_5">
+        <Image Source="/Resources/btn_QR.png" Width="196" Height="107"/>
+      </Button>
     </Grid>
+    <Grid x:Name="grid2" Grid.ColumnSpan="2" Grid.Row="5" Margin="10" HorizontalAlignment="Center" Height="370">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="50"/>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="50"/>
+        <ColumnDefinition/>
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <Grid Grid.ColumnSpan="4" Margin="0,0,0,10">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition/>
+          <ColumnDefinition Width="120"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition/>
+          <RowDefinition/>
+          <RowDefinition/>
+          <RowDefinition/>
+          <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.ColumnSpan="3" Text="ご利用料金" Style="{DynamicResource font24brown}"/>
+        <TextBlock Grid.Row="1" Text="\" Style="{DynamicResource font48black}"/>
+        <TextBlock Grid.Column="1" Grid.Row="1" Text="TextBlock" HorizontalAlignment="Right" Style="{DynamicResource font48black}"/>
+        <TextBlock Grid.ColumnSpan="3" Grid.Row="2" Text="お支払残額" Style="{DynamicResource font24brown}"/>
+        <TextBlock Grid.Row="3" Text="\" Style="{DynamicResource font48blue}"/>
+        <TextBlock Grid.Column="1" Grid.Row="3" Text="TextBlock" HorizontalAlignment="Right" Style="{DynamicResource font48blue}"/>
+        <TextBlock Grid.ColumnSpan="3" Grid.Row="4" Text="支払方法を選んでください" Style="{DynamicResource font30brown}"/>
+      </Grid>
+      <Image Grid.Column="4" Grid.RowSpan="2" Source="/Resources/screen03small.png" Width="444" Height="370"/>
+      <Button Grid.Row="1" Click="Button_Click_6">
+        <Image Source="/Resources/btn_back.png" Width="196" Height="107"/>
+      </Button>
+      <Button Grid.Column="2" Grid.Row="1" Click="Button_Click_7">
+        <Image Source="/Resources/btn_confirm.png" Width="196" Height="107"/>
+      </Button>
+    </Grid>
+
+  </Grid>
 </Page>

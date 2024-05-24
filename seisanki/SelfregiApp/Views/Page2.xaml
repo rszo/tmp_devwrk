@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
     xmlns:local="clr-namespace:SelfregiApp.Views"
     mc:Ignorable="d" 
-    d:DesignHeight="450" d:DesignWidth="800"
+    d:DesignHeight="768" d:DesignWidth="1024"
     Title="Page2">
 
   <Page.Resources>
@@ -35,8 +35,8 @@
       <RowDefinition Height="Auto"/>
     </Grid.RowDefinitions>
     <TextBlock Text="内容の確認" Style="{DynamicResource font36brown}"/>
-    <Button Grid.Column="1">
-      <Image Source="/Resources/btn_cancel.png" Width="92" Height="50"/>
+    <Button Grid.Column="1" Click="Button_Click">
+      <Image Source="{DynamicResource img_cancel}" Width="92"/>
     </Button>
     <Line Grid.ColumnSpan="2" Grid.Row="1" Margin="10" X2="{Binding ActualWidth, RelativeSource={RelativeSource Self}}" Stroke="Black"/>
     <TextBlock Grid.ColumnSpan="2" Grid.Row="2" Text="内容に間違いがなければ確認ボタンを押してください。" Height="80" Style="{DynamicResource font18brown}"/>
@@ -50,17 +50,17 @@
         <RowDefinition/>
       </Grid.RowDefinitions>
       <TextBlock Text="お客様氏名" Style="{DynamicResource font24brown}"/>
-      <TextBlock Grid.Column="1" Text="TextBlock" Style="{DynamicResource font24blue}"/>
+      <TextBlock Grid.Column="1" Text="非会員" Style="{DynamicResource font24blue}"/>
       <TextBlock Grid.Row="1" Text="会員番号" Style="{DynamicResource font24brown}"/>
-      <TextBlock Grid.Column="1" Grid.Row="1" Text="TextBlock" Style="{DynamicResource font24blue}"/>
+      <TextBlock Grid.Column="1" Grid.Row="1" Text="1547-000000" Style="{DynamicResource font24blue}"/>
     </Grid>
     <Grid Grid.ColumnSpan="2" Grid.Row="4" Margin="90,0">
       <Grid.ColumnDefinitions>
         <ColumnDefinition/>
         <ColumnDefinition Width="Auto"/>
       </Grid.ColumnDefinitions>
-      <Button Grid.Column="1">
-        <Image Source="/Resources/btn_confirm.png" Width="196"/>
+      <Button Grid.Column="1" Click="Button_Click_1">
+        <Image Source="{DynamicResource img_confirm}" Width="196"/>
       </Button>
     </Grid>
   </Grid>

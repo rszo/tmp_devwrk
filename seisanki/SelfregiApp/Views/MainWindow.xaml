@@ -6,7 +6,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:SelfregiApp.Views"
     mc:Ignorable="d"
-    Title="MainWindow" Height="450" Width="800">
+    Title="MainWindow" Height="768" Width="1024" ResizeMode="NoResize">
 
   <Window.Resources>
     <Style x:Key="font16brown" TargetType="TextBlock">
@@ -30,10 +30,10 @@
       <RowDefinition/>
       <RowDefinition Height="Auto"/>
     </Grid.RowDefinitions>
-    <Frame Content="Frame" Grid.ColumnSpan="7"/>
+    <Frame Content="Frame" Grid.ColumnSpan="7" Source="/Views/Page1.xaml"/>
     <TextBlock Grid.Column="1" Grid.Row="1" Text="Machine ID : " Style="{DynamicResource font16brown}"/>
-    <TextBlock Grid.Column="2" Grid.Row="1" Text="TextBlock" Style="{DynamicResource font16brown}"/>
+    <TextBlock Grid.Column="2" Grid.Row="1" Text="2" Style="{DynamicResource font16brown}"/>
     <TextBlock Grid.Column="4" Grid.Row="1" Text="Version : " Style="{DynamicResource font16brown}"/>
-    <TextBlock Grid.Column="5" Grid.Row="1" Text="TextBlock" Style="{DynamicResource font16brown}"/>
+    <TextBlock Grid.Column="5" Grid.Row="1" Text="2.0.0" Style="{DynamicResource font16brown}"/>
   </Grid>
 </Window>

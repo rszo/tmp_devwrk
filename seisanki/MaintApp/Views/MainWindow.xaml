@@ -59,7 +59,7 @@
         <Button Content="終了"/>
       </StackPanel>
     </GroupBox>
-    <Frame Content="Frame" Grid.ColumnSpan="3" Grid.Row="1"/>
+    <Frame Content="Frame" Grid.ColumnSpan="3" Grid.Row="1" Source="/Views/Page1.xaml"/>
 
   </Grid>
 </Window>

@@ -6,10 +6,28 @@
     StartupUri="Views/MainWindow.xaml">
 
   <Application.Resources>
-    <Style TargetType="Button">
-      <Setter Property="Background" Value="{x:Null}"/>
-      <Setter Property="BorderBrush" Value="{x:Null}"/>
-    </Style>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Resources/Dictionary1.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
 
+      <Style TargetType="Button">
+        <Setter Property="Background" Value="{x:Null}"/>
+        <Setter Property="BorderBrush" Value="{x:Null}"/>
+      </Style>
+      <Style TargetType="Frame">
+        <Setter Property="NavigationUIVisibility" Value="Hidden"/>
+      </Style>
+      <Style x:Key="font36brown" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="#FF533745"/>
+        <Setter Property="FontFamily" Value="MS UI Gothic"/>
+        <Setter Property="FontSize" Value="48"/>
+      </Style>
+      <Style x:Key="font18brown" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="#FF533745"/>
+        <Setter Property="FontFamily" Value="MS UI Gothic"/>
+        <Setter Property="FontSize" Value="24"/>
+      </Style>
+    </ResourceDictionary>
   </Application.Resources>
 </Application>
